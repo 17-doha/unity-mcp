@@ -1,5 +1,5 @@
 from typing import Any, Dict
-from mcp import Context
+from mcp.server.fastmcp import Context
 
 async def handle_timer(ctx: Context, params: Dict[str, Any]) -> Dict[str, Any]:
     """
