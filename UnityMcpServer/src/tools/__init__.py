@@ -6,7 +6,7 @@ from .manage_asset import register_manage_asset_tools
 from .manage_shader import register_manage_shader_tools
 from .read_console import register_read_console_tools
 from .execute_menu_item import register_execute_menu_item_tools
-from .timer import handle_timer
+from .timer import register_timer_tools  # Update this line
 
 def register_all_tools(mcp):
     """Register all refactored tools with the MCP server."""
@@ -19,9 +19,5 @@ def register_all_tools(mcp):
     register_manage_shader_tools(mcp)
     register_read_console_tools(mcp)
     register_execute_menu_item_tools(mcp)
+    register_timer_tools(mcp)  # Add this line
     print("Unity MCP Server tool registration complete.")
-
-# Add to the tools dictionary
-tools = {
-    "timer": handle_timer,
-}

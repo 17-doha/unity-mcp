@@ -1,5 +1,11 @@
 from typing import Any, Dict
-from mcp.server.fastmcp import Context
+from mcp.server.fastmcp import Context, FastMCP
+
+def register_timer_tools(mcp: FastMCP):
+    """Register timer tools with the MCP server."""
+    @mcp.tool()
+    async def timer(ctx: Context, time: float, unit: str = "sec") -> Dict[str, Any]:
+        return await handle_timer(ctx, {"time": time, "unit": unit})
 
 async def handle_timer(ctx: Context, params: Dict[str, Any]) -> Dict[str, Any]:
     """
